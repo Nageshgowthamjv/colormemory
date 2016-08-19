@@ -9,11 +9,20 @@ define(['marionette', 'hbs!templates/playArea', 'views/cardView', 'models/CardCo
 				this.collection = new CardCollection();
 				this.setCards();
 			},
+			ui: {
+				'restart': '#restart',
+				'gameinfo': '.gameinfo'
+			},
+			events: {
+				'click @ui.restart': 'restart'
+			},
 			onRender: function() {
 				var that = this;
 				this.$el.find('.container:first').addClass('selected');
 
 				$(document).keydown(function(e) {
+
+					if (that.model.get('isGameDone')) return;
 
 					var selectedIndex = that.$el.find('.selected').index();
 
@@ -42,8 +51,14 @@ define(['marionette', 'hbs!templates/playArea', 'views/cardView', 'models/CardCo
 
 			setCards: function() {
 				this.collection.setCards();
+				this.$el.find('.container:first').addClass('selected');
 			},
-
+			restart: function() {
+				this.setCards();
+				this.model.set('isGameDone', false);
+				this.ui.restart.blur();
+				this._setMessage('New game started.');
+			},
 			moveUp: function(index) {
 				var next = index - 4;
 				if (next < 0) return;
@@ -70,6 +85,7 @@ define(['marionette', 'hbs!templates/playArea', 'views/cardView', 'models/CardCo
 			},
 			flipCard: function(index) {
 				var flipCard = this.children.findByIndex(index);
+				if (flipCard.model.get('isFlipped')) return;
 				flipCard.showCard();
 
 				if (this.lastFlipCard) {
@@ -77,12 +93,24 @@ define(['marionette', 'hbs!templates/playArea', 'views/cardView', 'models/CardCo
 						var points = this.model.get('points');
 						points++;
 						this.model.set('points', points);
-					} else {
+						this._setMessage('You have scored ' + points + ' points.');
+						this.$el.find('.flipped').children().fadeOut( "slow" );
 
+					} else {
+						//reset
+						this.model.set('points', 0);
+						this.model.set('isGameDone', true);
+						this._setMessage('Restart the game to try again.');
 					}
+					//only odd times is required
+					this.lastFlipCard = null;
 				} else {
 					this.lastFlipCard = flipCard;
 				}
+			},
+
+			_setMessage: function(message) {
+				this.ui.gameinfo.html(message);
 			}
 
 		});
