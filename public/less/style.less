@@ -1,0 +1,99 @@
+//imports files
+@import "bootstrap/bootstrap";
+
+html, body {
+
+  /*height: 100%;
+  width: 100%;*/
+  width: 720px;
+  height: 576px;
+  min-width: 720px;
+  min-height: 576px;
+}
+.header {
+}
+.content {
+  background-color: #e1e1e1;
+  height: 100%;
+  width: 100%;
+}
+.grid {
+  height: 425px;
+  min-height: 425px;
+  max-height: 425px;
+  width: 350px;
+  min-width: 350px;
+  max-width: 350px;
+  display: block;
+}
+.container {
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -o-perspective: 1000;
+  perspective: 1000;
+  display: inline-block;
+  border: 1px solid #ccc;
+
+  box-sizing: content-box;
+  margin: 0px 2.5px;
+}
+.flipped .card {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.container, .front, .back {
+  width: 80px;
+  height: 100px;
+}
+.card {
+  -webkit-transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transition: 0.6s;
+  -moz-transform-style: preserve-3d;
+  -o-transition: 0.6s;
+  -o-transform-style: preserve-3d;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.front, .back {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.front {
+  z-index: 2;
+}
+.back {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  background: #f8f8f8;
+}
+.selected {
+  border: 1px solid red;
+}
+
+.logo{
+
+}
+.actions{
+
+}
+.playarea{
+    display: flex;
+    height: 100%;
+    padding: 40px;
+}
+.info{
+    border: 2px solid #3698c8;
+    padding: 10px;
+    background-color: #a2bac5;
+}
