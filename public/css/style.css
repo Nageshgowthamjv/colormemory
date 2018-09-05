@@ -7171,9 +7171,13 @@ body {
 }
 .gameinfo {
   width: 100%;
-  height: 142px;
   padding: 30px 10px;
 }
 .info-conatainer {
   margin-left: 34px;
+}
+.action-space {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
