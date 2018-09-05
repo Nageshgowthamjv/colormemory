@@ -6979,80 +6979,27 @@ label.bootstrap-checkbox.disabled {
 }
 html,
 body {
-  /*height: 100%;
-  width: 100%;*/
-  width: 720px;
-  height: 576px;
-}
-.header {
-  /*height: 60px;
-  width: 100%;
-  background-color: #909ea5;
-  float: left;*/
-}
-.content {
-  background-color: #e1e1e1;
   height: 100%;
   width: 100%;
+  font-family: cursive;
+}
+.content {
+  background-color: #c90035;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .grid {
-  height: 400px;
-  min-height: 400px;
-  max-height: 400px;
+  height: 425px;
+  min-height: 425px;
+  max-height: 425px;
   width: 350px;
   min-width: 350px;
   max-width: 350px;
   display: block;
 }
-/*.container {
-display: inline-block;
-height: 100px;
-min-height: 100px;
-max-height: 100px;
-width: 80px;
-min-width: 80px;
-max-width: 80px;
-position: relative;
--webkit-perspective: 800;
-box-sizing: content-box;
-margin: 0px 2.5px;
-}
-.card {
-width: 100%;
-height: 100%;
-position: absolute;
--webkit-transform-style: preserve-3d;
--webkit-transition: -webkit-transform 1s;
-}
-.face {
-display: block;
-position: absolute;
-width: 100%;
-height: 100%;
-margin: 0;
-
--webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
--webkit-transition: -webkit-transform 0.3s;
-      transition: transform 0.3s;
-}
-.front{
- background: red;
-}
-.back {
- background: blue;
--webkit-transform: rotateY(180deg);
-}
-.flipped {
--webkit-transform: rotateY(180deg);
--moz-transform: rotateY(180deg);
--o-transform: rotateY(180deg);
-transform: rotateY(180deg);
-}
-.selected{
-border: 1px solid red;
-}
-*/
 .container {
   -webkit-perspective: 1000;
   -moz-perspective: 1000;
@@ -7060,13 +7007,9 @@ border: 1px solid red;
   perspective: 1000;
   display: inline-block;
   border: 1px solid #ccc;
+  box-sizing: content-box;
+  margin: 0px 2.5px;
 }
-/*.container:hover .card, .container.hover .card {
--webkit-transform: rotateY(180deg);
--moz-transform: rotateY(180deg);
--o-transform: rotateY(180deg);
-transform: rotateY(180deg);
-}*/
 .flipped .card {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
@@ -7111,5 +7054,38 @@ transform: rotateY(180deg);
   background: #f8f8f8;
 }
 .selected {
-  border: 1px solid red;
+  background-color: white;
+}
+.selected .card {
+  opacity: 0.5;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+.actions button,
+.actions:hover button {
+  float: right;
+  background-color: #93073e;
+  border-color: #93073e;
+}
+.playarea {
+  display: flex;
+  padding: 40px;
+  width: 720px;
+  background-color: #ff5627;
+}
+.info {
+  padding: 10px;
+  background-color: #ffc400;
+}
+.gameinfo {
+  width: 100%;
+  height: 142px;
+  padding: 30px 10px;
+}
+.info-conatainer {
+  margin-left: 34px;
 }

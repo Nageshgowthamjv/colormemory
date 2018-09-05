@@ -22,7 +22,10 @@ define(['marionette', 'hbs!templates/playArea', 'views/cardView', 'models/CardCo
 
 				$(document).keydown(function(e) {
 
-					if (that.model.get('isGameDone')) return;
+					if (that.model.get('isGameDone')){
+						that.restart();
+						return;
+					}
 
 					var selectedIndex = that.$el.find('.selected').index();
 

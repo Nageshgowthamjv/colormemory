@@ -6979,25 +6979,25 @@ label.bootstrap-checkbox.disabled {
 }
 html,
 body {
-  /*height: 100%;
-  width: 100%;*/
-  width: 720px;
-  height: 576px;
-  min-width: 720px;
-  min-height: 576px;
-}
-.content {
-  background-color: #e1e1e1;
   height: 100%;
   width: 100%;
+  font-family: cursive;
+}
+.content {
+  background-color: #c90035;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .grid {
   height: 425px;
   min-height: 425px;
   max-height: 425px;
-  width: 350px;
-  min-width: 350px;
-  max-width: 350px;
+  width: 370px;
+  min-width: 370px;
+  max-width: 370px;
   display: block;
 }
 .container {
@@ -7006,7 +7006,7 @@ body {
   -o-perspective: 1000;
   perspective: 1000;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 2px solid white;
   box-sizing: content-box;
   margin: 0px 2.5px;
 }
@@ -7054,23 +7054,35 @@ body {
   background: #f8f8f8;
 }
 .selected {
-  border: 1px solid red;
+  border-color: black;
 }
-.actions button {
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+.actions button,
+.actions:hover button {
   float: right;
+  background-color: #93073e;
+  border-color: #93073e;
 }
 .playarea {
   display: flex;
-  height: 100%;
   padding: 40px;
+  width: 720px;
+  background-color: #ff5627;
 }
 .info {
-  border: 2px solid #3698c8;
   padding: 10px;
-  background-color: #a2bac5;
+  background-color: #ffc400;
 }
 .gameinfo {
   width: 100%;
   height: 142px;
   padding: 30px 10px;
+}
+.info-conatainer {
+  margin-left: 34px;
 }
